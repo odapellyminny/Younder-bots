@@ -1,0 +1,5 @@
+
+list1 = list(map(int, input("Enter sorted list 1 elements separated by spaces: ").split()))
+list2 = list(map(int, input("Enter sorted list 2 elements separated by spaces: ").split()))
+merged_list = sorted(list1 + list2)
+print("Merged sorted list:", merged_list)

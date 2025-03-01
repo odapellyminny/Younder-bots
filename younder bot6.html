@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Page Navigation</title>
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hide content sections */
+        .content {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+    
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- Home Page Content -->
+    <div id="home" class="content active">
+        <h2>Welcome to Our Website</h2>
+        <p>Click the button below to learn more about us.</p>
+        <button onclick="showPage('about')">About Us</button>
+    </div>
+
+    <!-- About Us Page Content -->
+    <div id="about" class="content">
+        <h2>About Us</h2>
+        <p>Welcome to the About Us page of our website.</p>
+        <button onclick="showPage('home')">Go Back</button>
+    </div>
+
+</body>
+</html>      
+

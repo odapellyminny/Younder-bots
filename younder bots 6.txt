@@ -1,0 +1,19 @@
+def second_largest(lst):
+    if len(lst) < 2:
+        return None  
+    
+    first, second = float('-inf'), float('-inf')
+    
+    for num in lst:
+        if num > first:
+            second, first = first, num  
+        elif first > num > second:
+            second = num
+    return second if second != float('-inf') else None  # Return None if there's no second distinct element
+numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
+
+result = second_largest(numbers)
+if result is not None:
+    print(f"The second largest number is: {result}")
+else:
+    print("No second largest number found.")
